@@ -12,10 +12,11 @@ const Links = () =>
     </nav>;
 
 
-const Home = () =>
+const Home = (props) =>
     <div>
         <h1>Home</h1>
         <Links />
+        {props.children}
     </div>;
 
 const About = () =>
@@ -36,9 +37,10 @@ class App extends React.Component {
     render() {
         return (
             <Router history={hashHistory}>
-                <Route path="/" component={Home}></Route>
-                <Route path="/about" component={About}></Route>
-                <Route path="/contact" component={Contact}></Route>
+                <Route path="/" component={Home}>
+                    <Route path="about" component={About}></Route>
+                    <Route path="contact" component={Contact}></Route>
+                </Route>
             </Router>
     );
     }
