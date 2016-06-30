@@ -5,6 +5,6 @@ import AppNamedComponent from './AppNamedComponent'
 import AppQueryParameter from './AppQueryParameter'
 
 ReactDOM.render(
-    <AppQueryParameter />,
+    <App />,
     document.getElementById('app')
 );

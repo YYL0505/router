@@ -1,5 +1,5 @@
 import React from 'react';
-import {Router, IndexRoute, Route, Link, hashHistory } from 'react-router';
+import {Router, IndexRoute, Route, Link, hashHistory, Redirect } from 'react-router';
 
 const Links = () =>
     <nav>
@@ -8,6 +8,8 @@ const Links = () =>
         <Link activeClassName="activeLink" activeStyle={{color: "#FF0000"}} to="/users/Yingli">User</Link>
         <br/>
         <Link activeClassName="activeLink" activeStyle={{color: "#FF0000"}} to="/about">About</Link>
+        <br/>
+        <Link activeClassName="activeLink" activeStyle={{color: "#FF0000"}} to="/about-us">About US</Link>
         <br/>
         <Link activeClassName="activeLink" activeStyle={{color: "#FF0000"}} to="/contact">Contact</Link>
         <br/>
@@ -33,7 +35,7 @@ const User = (props) =>
 
 const About = () =>
     <div>
-        <h2>about</h2>
+        <h2>About</h2>
     </div>;
 
 const Contact = () =>
@@ -52,6 +54,7 @@ class App extends React.Component {
                     <Route path="users/(:username)" component={User}></Route>
                     <Route path="about" component={About}></Route>
                     <Route path="contact" component={Contact}></Route>
+                    <Redirect from="about-us" to="about"></Redirect>
                 </Route>
             </Router>
     );
