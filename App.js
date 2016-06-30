@@ -3,11 +3,11 @@ import {Router, Route, Link, hashHistory } from 'react-router';
 
 const Links = () =>
     <nav>
-        <Link to="/">Home</Link>
+        <Link activeStyle={{color: "#FF0000"}} to="/">Home</Link>
         <br/>
-        <Link to="/about">About</Link>
+        <Link activeStyle={{color: "#FF0000"}} to="/about">About</Link>
         <br/>
-        <Link to="/contact">Contact</Link>
+        <Link activeStyle={{color: "#FF0000"}} to="/contact">Contact</Link>
         <br/>
     </nav>;
 
