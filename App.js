@@ -1,10 +1,45 @@
 import React from 'react';
+import {Router, Route, Link, hashHistory } from 'react-router';
+
+const Links = () =>
+    <nav>
+        <Link to="/">Home</Link>
+        <br/>
+        <Link to="/about">About</Link>
+        <br/>
+        <Link to="/contact">Contact</Link>
+        <br/>
+    </nav>;
+
+
+const Home = () =>
+    <div>
+        <h1>Home</h1>
+        <Links />
+    </div>;
+
+const About = () =>
+    <div>
+        <h1>about</h1>
+        <Links />
+    </div>;
+
+const Contact = () =>
+    <div>
+        <h1>Contact</h1>
+        <Links />
+    </div>;
+
+
 
 class App extends React.Component {
-
     render() {
         return (
-            <div>router</div>
+            <Router history={hashHistory}>
+                <Route path="/" component={Home}></Route>
+                <Route path="/about" component={About}></Route>
+                <Route path="/contact" component={Contact}></Route>
+            </Router>
     );
     }
 }
