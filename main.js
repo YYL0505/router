@@ -6,6 +6,6 @@ import AppQueryParameter from './AppQueryParameter'
 import AppLeaveHook from './AppLeaveHook'
 
 ReactDOM.render(
-    <AppLeaveHook />,
+    <App />,
     document.getElementById('app')
 );

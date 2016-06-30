@@ -1,5 +1,8 @@
 import React from 'react';
-import {Router, IndexRoute, Route, Link, hashHistory, Redirect } from 'react-router';
+import {Router, IndexRoute, Route, Link, hashHistory, Redirect, useRouterHistory } from 'react-router';
+import {createHashHistory} from 'history'
+
+const appHistory = useRouterHistory(createHashHistory)({ queryKey: false })
 
 const Links = () =>
     <nav>
@@ -48,7 +51,7 @@ const Contact = () =>
 class App extends React.Component {
     render() {
         return (
-            <Router history={hashHistory}>
+            <Router history={appHistory}>
                 <Route path="/" component={Home}>
                     <IndexRoute component={Index}></IndexRoute>
                     <Route path="users/(:username)" component={User}></Route>
